@@ -17,11 +17,11 @@ import {
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "+1 123 456 7890",
-  },
+  // {
+  //   icon: <FaPhoneAlt />,
+  //   title: "Phone",
+  //   description: "+1 123 456 7890",
+  // },
   {
     icon: <FaEnvelope />,
     title: "Email",
@@ -30,7 +30,7 @@ const info = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "NYC",
+    description: "New York City, NY",
   },
 ];
 
@@ -56,7 +56,7 @@ const Contact = () => {
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Let's work together</h3>
-              <p className="text-white/60">Lorem ipsum</p>
+              <p className="text-white/60">Fill out the form below to get in touch with me.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input type="firstname" placeholder="Firstname"/>
                 <Input type="lastname" placeholder="Lastname"/>
@@ -71,9 +71,11 @@ const Contact = () => {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
+                    <SelectItem value="est">Frontend Development</SelectItem>
+                    <SelectItem value="cst">Backend Development</SelectItem>
+                    <SelectItem value="mst">Fullstack Development</SelectItem>
+                    <SelectItem value="pst">Software Development, Design & QA</SelectItem>
+                    <SelectItem value="cloud">Cloud Services</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -82,8 +84,14 @@ const Contact = () => {
                 className="h-[200px]"
                 placeholder="Type your message here."
               />
-              {/* btn */}
-              <Button size="md" className="max-w-40">
+              {/* btn on click it should send the form data to my email */}
+              <Button 
+                size="md" 
+                className="max-w-40" 
+                type="submit" 
+                // onClick={(e) => e.preventDefault()}
+                // variant="primary"
+              >
                 Send message
               </Button>
             </form>
