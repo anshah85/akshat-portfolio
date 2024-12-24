@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
@@ -14,19 +16,20 @@ const Home = () => {
         xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Development Engineer</span>
+            <span className="text-xl">Software Engineer</span>
             <h1 className="h1">
               Hello I'm <br /> <span className="text-accent">Akshat Shah</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.
+              I'm a software engineer based in United States, specializing in building exceptional digital experiences. Currently, I'm focused on developing responsive web applications and working with modern web technologies.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button 
                 variant="outline" 
                 size="lg"
-                className="uppercase flex items-center gap-2"  
+                className="uppercase flex items-center gap-2" 
+                onClick={() => window.open("/assets/Akshat_Shah.pdf", "_blank")}
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
