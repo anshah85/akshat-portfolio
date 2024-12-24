@@ -15,7 +15,7 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 const about = {
   title: "About me",
-  description: "Lorem ippsum",
+  description: "Software Engineer with 8+ years of experience in developing large scale infrastructure applications. I specialize in front-end development with React.js and Next.js. I am passionate about creating user-friendly and responsive web applications.",
   info: [
     {
       fieldName: "Name",
@@ -23,7 +23,7 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+1) 123 456 7890"
+      fieldValue: "(+1) 607 370 8772"
     },
     {
       fieldName: "Experience",
@@ -43,7 +43,7 @@ const about = {
     },
     {
       fieldName: "Languages",
-      fieldValue: "English, Hindi"
+      fieldValue: "English, Hindi, Gujarati, French"
     },
   ]
 };
@@ -53,32 +53,32 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
-  description: "Lorem ipsum",
+  description: "Software Development and Quality Assurance Engineer with 8+ years of experience in developing large scale infrastructure applications. I specialize in front-end development with React.js and Next.js. I am passionate about creating user-friendly and responsive web applications.", 
   items: [
     {
-      company: "Infosys Limited",
-      position: "Software Development Engineer",
-      duration: "2014 - 2022",
+      company: "Binghamton University",
+      position: "Graduate Assistant",
+      duration: "Aug 2023 - Present",
     },
     {
       company: "Infosys Limited",
-      position: "Software Development Engineer",
-      duration: "2014 - 2022",
+      position: "Test Analyst",
+      duration: "Apr 2019 - Aug 2022",
     },
     {
       company: "Infosys Limited",
-      position: "Software Development Engineer",
-      duration: "2014 - 2022",
+      position: "Test Engineer",
+      duration: "Mar 2015 - Mar 2019",
     },
     {
       company: "Infosys Limited",
-      position: "Software Development Engineer",
-      duration: "2014 - 2022",
+      position: "Software Engineer Trainee",
+      duration: "Oct 2014 - Feb 2015",
     },
     {
-      company: "Infosys Limited",
-      position: "Software Development Engineer",
-      duration: "2014 - 2022",
+      company: "Emerson Process Management",
+      position: "Intern",
+      duration: "Jun 2013 - Aug 2013",
     },
   ]
 };
@@ -88,17 +88,17 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
-  description: "Lorem ipsum",
+  description: "Educational background and qualifications",
   items: [
     {
-      institution: "Infosys Limited",
-      degree: "Software Development Engineer",
-      duration: "2014 - 2022",
+      institution: "Binghamton University",
+      degree: "Master of Science in Computer Science",
+      duration: "2022 - 2024",
     },
     {
-      institution: "Infosys Limited",
-      degree: "Software Development Engineer",
-      duration: "2014 - 2022",
+      institution: "Gujarat Technological University",
+      degree: "Bachelor of Engineering in Instrumentation & Control",
+      duration: "2010 - 2014",
     },
   ]
 };
@@ -107,7 +107,7 @@ const education = {
 
 const skills = {
   title: "My skills",
-  description: "Lorem ipsum",
+  description: "Technologies and tools I am proficient in",
   skillList: [
     {
       icon: <FaHtml5 />,
