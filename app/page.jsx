@@ -28,6 +28,20 @@ const TypewriterText = ({ text, speed = 100 }) => {
 };
 
 const Home = () => {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!showContent) {
+    return null;
+  }
+
   return (
     <section className="min-h-screen flex flex-col justify-center">
       <div className="container mx-auto">
@@ -37,7 +51,7 @@ const Home = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.2 }}
             className="text-center xl:text-left order-2 xl:order-none"
           >
             <div className="flex items-center gap-2 mb-6">
@@ -48,10 +62,10 @@ const Home = () => {
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.05 }}
               className="text-xl inline-block mb-4"
             >
-              <TypewriterText text="Software Engineer" />
+              <TypewriterText text="Software Engineer" speed={25} />
             </motion.div>
 
             <h1 className="h1">
@@ -59,7 +73,7 @@ const Home = () => {
               <motion.span 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.1 }}
                 className="text-accent inline-block relative pb-4"
               >
                 Akshat Shah
@@ -67,7 +81,7 @@ const Home = () => {
                   className="absolute bottom-0 left-0 w-full h-[2px] bg-accent"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.8, duration: 0.6 }}
+                  transition={{ delay: 0.15, duration: 0.2 }}
                 />
               </motion.span>
             </h1>
@@ -75,7 +89,7 @@ const Home = () => {
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.15 }}
               className="max-w-[500px] mb-9 text-white/80 leading-relaxed"
             >
               I'm a software engineer based in United States, specializing in building exceptional digital experiences. Currently, I'm focused on developing responsive web applications and working with modern web technologies.
@@ -85,7 +99,7 @@ const Home = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.2 }}
               className="flex flex-col xl:flex-row items-center gap-8"
             >
               <Button 
@@ -107,7 +121,7 @@ const Home = () => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.2 }}
             className="order-1 xl:order-none mb-8 xl:mb-0"
           >
             <Photo />
@@ -120,7 +134,7 @@ const Home = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.2 }}
       >
         <Stats />
       </motion.div>

@@ -10,37 +10,13 @@ const Photo = () => {
         animate={{
             opacity: 1,
             transition: {
-                delay: 2,
-                duration: 0.4,
+                duration: 0.2,
                 ease: "easeIn"
             },
         }}
+        className="relative"
     >
-        {/* image */}
-        <motion.div 
-            initial={{opacity: 0}}
-            animate={{
-                opacity: 1,
-                transition: {
-                    delay: 2.4,
-                    duration: 0.4,
-                    ease: "easeInOut"
-                },
-            }}
-            className="w-[290px] h-[290px] xl:w-[490px] xl:h-[490px] mix-blend-lighten
-            absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full"
-        >
-            <Image 
-                src="/assets/Akshat.png"
-                alt="Akshat Shah"
-                fill
-                priority
-                sizes="(max-width: 768px) 290px, 490px"
-                className="object-cover"
-            />
-        </motion.div>
-
-        {/* circle */}
+        {/* circle - moved before image to be behind */}
         <motion.svg 
             className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]" 
             fill="transparent"
@@ -67,6 +43,28 @@ const Photo = () => {
                 }}
             />
         </motion.svg>
+
+        {/* image - positioned on top */}
+        <motion.div 
+            initial={{opacity: 0}}
+            animate={{
+                opacity: 1,
+                transition: {
+                    duration: 0.2,
+                    ease: "easeInOut"
+                },
+            }}
+            className="w-[290px] h-[290px] xl:w-[490px] xl:h-[490px] mix-blend-lighten
+            absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+            <Image 
+                src="/assets/Akshat.png"
+                alt="Akshat Shah"
+                fill
+                priority
+                className="object-cover rounded-full"
+            />
+        </motion.div>
     </motion.div>
   </div>;
 }
