@@ -6,7 +6,7 @@ import Image from "next/image";
 const Photo = () => {
   return <div className="w-full h-full relative">
     <motion.div 
-        initial={{opacity: 0}}
+        initial={{opacity: 0, scale: 0.8}}
         animate={{
             opacity: 1,
             transition: {
@@ -27,11 +27,17 @@ const Photo = () => {
                     ease: "easeInOut"
                 },
             }}
-            className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten
-            absolute"
+            className="w-[290px] h-[290px] xl:w-[490px] xl:h-[490px] mix-blend-lighten
+            absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full"
         >
-            <Image src="/assets/photo.png" priority quality={100} fill 
-            alt="" className="object-contain" />
+            <Image 
+                src="/assets/Akshat.png"
+                alt="Akshat Shah"
+                fill
+                priority
+                sizes="(max-width: 768px) 290px, 490px"
+                className="object-cover"
+            />
         </motion.div>
 
         {/* circle */}
