@@ -72,26 +72,14 @@ const projects = [
     live: "",
     github: "",
   },
-  // {
-  //   num: "03",
-  //   category: "backend",
-  //   title: "project 3",
-  //   description: "Lorem ipsum",
-  //   stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-  //   image: "/assets/work/thumb3.png",
-  //   live: "",
-  //   github: "",
-  // },
 ];
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
-    // get current slide index
-    const currentIndex = swiper.activeIndex;
-    // update project state based on the current slide index
-    setProject(projects[currentIndex]);
+    const realIndex = swiper.realIndex; // Use realIndex for correct project mapping
+    setProject(projects[realIndex]);
   };
 
   return (
@@ -112,15 +100,12 @@ const Work = () => {
           {/* Left section with description */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
-              {/* project category */}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category}
               </h2>
-              {/* project description */}
               <p className="text-white/60">{project.description}</p>
               <ul className="flex gap-4">
                 {project.stack.map((item, index) => (
@@ -130,40 +115,9 @@ const Work = () => {
                   </li>
                 ))}
               </ul>
-              {/* border */}
               <div className="border border-white/20"></div>
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
             </div>
           </div>
-
-          {/* Partition between description and image */}
-          {/* <div className="hidden xl:block w-[2px] bg-gray-700 mx-[15px]"></div> */}
 
           {/* Right section with image */}
           <div className="w-full xl:w-[50%]">
