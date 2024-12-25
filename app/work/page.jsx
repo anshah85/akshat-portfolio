@@ -22,13 +22,20 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
+    category: "Athleiure - An Agility Coach",
     title: "project 1",
-    description: "Lorem ipsum",
-    stack: [{ name: "Html 5"}, { name: "Css 3"}, { name: "Javascript"}],
-    image: "/assets/work/thumb1.png",
+    description: "Athleisure is a web application that helps agility coaches to track their athletes' performance and provide feedback. The application uses computer vision to analyze the athletes' movements and provide insights to the coaches.",
+    stack: [
+      { name: "Flask" },
+      { name: "Python" },
+      { name: "OpenCV" },
+      { name: "Javascript" },
+      { name: "PostgreSQL" },
+      { name: "Streamlit" },
+    ],
+    image: "/assets/work/Athleisure.png",
     live: "",
-    github: "",
+    github: "https://devpost.com/software/agilitycoach",
   },
   {
     num: "02",

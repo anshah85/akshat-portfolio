@@ -6,26 +6,26 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
-    description: "Lorem ipsum",
+    title: "Software Development",
+    description: "I build responsive web applications and websites using modern web technologies.",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
-    description: "Lorem ipsum",
+    title: "Full Stack Development",
+    description: "I specialize in full stack development, building both the front-end and back-end of web applications.",
     href: "",
   },
   {
     num: "03",
-    title: "Logo Design",
-    description: "Lorem ipsum",
+    title: "Quality Assurance",
+    description: "I ensure that the web applications I build are of the highest quality and meet the client's requirements.",
     href: "",
   },
   {
     num: "04",
-    title: "SEO",
-    description: "Lorem ipsum",
+    title: "Backend Development",
+    description: "I have experience in building the back-end of web applications using Node.js, Express, and MongoDB.",
     href: "",
   },
 ];
