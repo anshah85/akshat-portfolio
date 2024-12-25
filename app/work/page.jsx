@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,7 +12,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
 
 import Link from "next/link";
@@ -24,7 +24,8 @@ const projects = [
     num: "01",
     category: "Athleiure - An Agility Coach",
     title: "project 1",
-    description: "Athleisure is a web application that helps agility coaches to track their athletes' performance and provide feedback. The application uses computer vision to analyze the athletes' movements and provide insights to the coaches.",
+    description:
+      "Athleisure is a web application that helps agility coaches to track their athletes' performance and provide feedback. The application uses computer vision to analyze the athletes' movements and provide insights to the coaches.",
     stack: [
       { name: "Flask" },
       { name: "Python" },
@@ -39,34 +40,48 @@ const projects = [
   },
   {
     num: "02",
-    category: "full-stack",
+    category: "Artist Popularity Analysis",
     title: "project 2",
-    description: "Lorem ipsum",
-    stack: [{ name: "Html 5"}, { name: "Css 3"}, { name: "Javascript"}],
-    image: "/assets/work/thumb2.png",
+    description: "Artist Popularity Analysis is a web application that helps music artists to analyze their popularity on social media platforms. The application uses machine learning algorithms to predict the popularity of the artists based on their social media data.",
+    stack: [
+      { name: "Flask" },
+      { name: "Python" },
+      { name: "Scikit-learn" },
+      { name: "Pandas" },
+      { name: "Numpy" },
+      { name: "PostgreSQL" },
+      { name: "Plotly" },
+      { name: "nltk" },
+    ],
+    image: "/assets/work/ArtistPopularityAnalysis.png",
     live: "",
-    github: "",
+    github: "https://github.com/2023-Fall-CS-415-515/project-3-implementation-informatics",
   },
   {
     num: "03",
-    category: "backend",
+    category: "Encrypted Bank Server",
     title: "project 3",
-    description: "Lorem ipsum",
-    stack: [{ name: "Html 5"}, { name: "Css 3"}, { name: "Javascript"}],
-    image: "/assets/work/thumb3.png",
+    description: "Encrypted Bank Server is a backend server that provides secure banking services to the users. The server uses encryption algorithms to secure the user data and transactions.",
+    stack: [
+      { name: "Java" },
+      { name: "Multi-threading" },
+      { name: "Socket Programming" },
+      { name: "Encryption Algorithms" },
+    ],
+    image: "/assets/work/EncryptedBankServer.png",
     live: "",
     github: "",
   },
-  {
-    num: "03",
-    category: "backend",
-    title: "project 3",
-    description: "Lorem ipsum",
-    stack: [{ name: "Html 5"}, { name: "Css 3"}, { name: "Javascript"}],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
-  },
+  // {
+  //   num: "03",
+  //   category: "backend",
+  //   title: "project 3",
+  //   description: "Lorem ipsum",
+  //   stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+  //   image: "/assets/work/thumb3.png",
+  //   live: "",
+  //   github: "",
+  // },
 ];
 
 const Work = () => {
@@ -80,20 +95,21 @@ const Work = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
-      animate={{ 
+      animate={{
         opacity: 1,
         transition: {
           delay: 2.4,
-          duration: 0.4, 
+          duration: 0.4,
           ease: "easeIn",
         },
-       }}
+      }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap[30px]">
+        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
+          {/* Left section with description */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* outline num */}
@@ -101,25 +117,23 @@ const Work = () => {
                 {project.num}
               </div>
               {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">{project.category} project</h2>
+              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                {project.category}
+              </h2>
               {/* project description */}
               <p className="text-white/60">{project.description}</p>
               <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {/* remove the last comma */}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
-                  );
-                })}
+                {project.stack.map((item, index) => (
+                  <li key={index} className="text-xl text-accent">
+                    {item.name}
+                    {index !== project.stack.length - 1 && ","}
+                  </li>
+                ))}
               </ul>
               {/* border */}
               <div className="border border-white/20"></div>
               {/* buttons */}
               <div className="flex items-center gap-4">
-                {/* live project button */}
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -132,7 +146,6 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                {/* github project button */}
                 <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -148,30 +161,36 @@ const Work = () => {
               </div>
             </div>
           </div>
+
+          {/* Partition between description and image */}
+          {/* <div className="hidden xl:block w-[2px] bg-gray-700 mx-[15px]"></div> */}
+
+          {/* Right section with image */}
           <div className="w-full xl:w-[50%]">
-            <Swiper 
-              spaceBetween={30} 
+            <Swiper
+              spaceBetween={30}
               slidesPerView={1}
+              loop={true}
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      {/* image */}
-                      <div className="relative w-full h-full">
-                        <Image src={project.image} fill className="object-cover" alt="" />
-                      </div>
+              {projects.map((project, index) => (
+                <SwiperSlide key={index} className="w-full">
+                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.image}
+                        fill
+                        className="object-cover"
+                        alt=""
+                      />
                     </div>
-                  </SwiperSlide>
-                );
-              })}
-              {/* slider buttons */}
-              <WorkSliderBtns 
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none" 
+                  </div>
+                </SwiperSlide>
+              ))}
+              <WorkSliderBtns
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
                 btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
               />
             </Swiper>
