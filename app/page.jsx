@@ -33,7 +33,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -43,7 +43,7 @@ const Home = () => {
   }
 
   return (
-    <section className="min-h-screen flex flex-col justify-center">
+    <section className="flex flex-col justify-center">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row items-center justify-between 
         xl:pt-8 xl:pb-24">
@@ -56,7 +56,7 @@ const Home = () => {
           >
             <div className="flex items-center gap-2 mb-6">
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-sm text-white/60">Currently working on: React & Next.js Projects</span>
+              <span className="text-sm text-white/60">Currently working on: React & Next.js Projects, Cloud Technologies</span>
             </div>
             
             <motion.div 
@@ -92,7 +92,7 @@ const Home = () => {
               transition={{ delay: 0.15 }}
               className="max-w-[500px] mb-9 text-white/80 leading-relaxed"
             >
-              I'm a software engineer based in United States, specializing in building exceptional digital experiences. Currently, I'm focused on developing responsive web applications and working with modern web technologies.
+              I'm a software engineer based in United States, with 8+ years of experience in building large scale infrastructure, web applications and automation tools. I specialize in building high-quality websites and applications with a focus on performance, accessibility and user experience.
             </motion.p>
 
             {/* btn and socials */}
@@ -130,14 +130,14 @@ const Home = () => {
       </div>
 
       {/* Stats with scroll reveal */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.2 }}
       >
         <Stats />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

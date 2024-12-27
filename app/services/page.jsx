@@ -42,7 +42,7 @@ const Services = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
