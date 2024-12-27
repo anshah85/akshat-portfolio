@@ -5,16 +5,15 @@ import {
   FaCss3, 
   FaReact, 
   FaJs, 
-  FaFigma, 
   FaNodeJs,
   FaJava,
   FaPython,
   FaAws,
   FaDatabase,
   FaFlask,
-  FaGit,
   FaGithub,
-  FaJenkins
+  FaJenkins,
+  FaMapMarkerAlt
  } from "react-icons/fa";
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
@@ -66,26 +65,31 @@ const experience = {
     {
       company: "Binghamton University",
       position: "Graduate Assistant",
+      location: "Binghamton, NY",
       duration: "Aug 2023 - Present",
     },
     {
       company: "Infosys Limited",
       position: "Test Analyst",
+      location: "Cape Town, South Africa",
       duration: "Apr 2019 - Aug 2022",
     },
     {
       company: "Infosys Limited",
       position: "Test Engineer",
+      location: "Cape Town, South Africa",
       duration: "Mar 2015 - Mar 2019",
     },
     {
       company: "Infosys Limited",
       position: "Software Engineer Trainee",
+      location: "Mysore, India",
       duration: "Oct 2014 - Feb 2015",
     },
     {
       company: "Emerson Process Management",
       position: "Intern",
+      location: "Vadodara, India",
       duration: "Jun 2013 - Aug 2013",
     },
   ]
@@ -102,11 +106,13 @@ const education = {
       institution: "Binghamton University",
       degree: "Master of Science in Computer Science",
       duration: "2022 - 2024",
+      location: "Binghamton, NY",
     },
     {
       institution: "Gujarat Technological University",
       degree: "Bachelor of Engineering in Instrumentation & Control",
       duration: "2010 - 2014",
+      location: "Gandhinagar, India",
     },
   ]
 };
@@ -164,6 +170,14 @@ const skills = {
     {
       icon: <FaAws />,
       name: "aws",
+    },
+    {
+      icon: <FaHtml5 />,
+      name: "html5",
+    },
+    {
+      icon: <FaCss3 />,
+      name: "css3",
     },
   ]
 };
@@ -227,6 +241,12 @@ const Resume = () => {
                           <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                           <p className="text-white/60">{item.company}</p>
                         </div>
+                        {/* location */}
+                        <div className="flex items-center gap-3">
+                          {/* <span className="w-[6px] h-[6px] bg-accent"></span> */}
+                          <FaMapMarkerAlt className="w-4 h-4 text-accent" />
+                          <p className="text-white/60">{item.location}</p>
+                        </div>
                       </li>
                     )
                   })}
@@ -253,6 +273,12 @@ const Resume = () => {
                           {/* dot */}
                           <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                           <p className="text-white/60">{item.institution}</p>
+                        </div>
+                        {/* location */}
+                        <div className="flex items-center gap-3">
+                          {/* <span className="w-[6px] h-[6px] bg-accent"></span> */}
+                          <FaMapMarkerAlt className="w-4 h-4 text-accent" />
+                          <p className="text-white/60">{item.location}</p>
                         </div>
                       </li>
                     )

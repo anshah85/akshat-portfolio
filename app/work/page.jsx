@@ -22,8 +22,57 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "Athleiure - An Agility Coach",
+    category: "ABSA Vehicle and Asset Finance (AVAF) - A Vehicle Loan Application System",
     title: "project 1",
+    description:
+      "ABSA Vehicle and Asset Finance (AVAF) is a web application that helps customers to apply for vehicle loans. The application processes the customer's loan application and provides the loan approval status to the customers. The application also provides the customers with the option to view their loan details and make payments online.",
+    stack: [
+      { name: "Java" },
+      { name: "Spring" },
+      // { name: "Apache Kafka" },
+      { name: "Selenium" },
+      { name: "PostgreSQL" },
+      { name: "Karate" },
+      { name: "Docker" },
+      { name: "Kubernetes" },
+      { name: "Jenkins" },
+      // { name: "SonarQube" },
+      // { name: "JIRA" },
+      // { name: "Confluence" },
+    ],
+    image: "/assets/work/VehicleFinancing.png",
+    live: "https://www.absa.co.za/personal/loans/for-a-car/manage-my-car-loan-account/",
+    github: "https://www.absa.co.za/personal/loans/for-a-car/manage-my-car-loan-account/",
+  },
+  {
+    num: "02",
+    category: "Debicheck - A Debit Order Verification System",
+    title: "project 2",
+    description:
+      "Debicheck is a web application that helps customers to verify their debit orders. The application provides the customers with the option to view their debit orders and verify them. The application also provides the customers with the option to dispute the debit orders if they are not valid.",
+    stack: [
+      { name: "Java" },
+      { name: "Spring" },
+      // { name: "IBM MQ" },
+      // { name: "Postman" },
+      // { name: "IBM Rational Integration Tester" },
+      { name: "Selenium" },
+      { name: "PostgreSQL" },
+      { name: "Docker" },
+      { name: "Kubernetes" },
+      { name: "Jenkins" },
+      // { name: "SonarQube" },
+      // { name: "JIRA" },
+      // { name: "Confluence" },
+    ],
+    image: "/assets/work/DebiCheck.png",
+    live: "https://www.absa.co.za/self-service/safety-security/debicheck/",
+    github: "https://www.absa.co.za/self-service/safety-security/debicheck/",
+  },
+  {
+    num: "03",
+    category: "Athleiure - An Agility Coach",
+    title: "project 3",
     description:
       "Athleisure is a web application that helps agility coaches to track their athletes' performance and provide feedback. The application uses computer vision to analyze the athletes' movements and provide insights to the coaches.",
     stack: [
@@ -35,13 +84,13 @@ const projects = [
       { name: "Streamlit" },
     ],
     image: "/assets/work/Athleisure.png",
-    live: "",
+    // live: "",
     github: "https://devpost.com/software/agilitycoach",
   },
   {
-    num: "02",
+    num: "04",
     category: "Artist Popularity Analysis",
-    title: "project 2",
+    title: "project 4",
     description: "Artist Popularity Analysis is a web application that helps music artists to analyze their popularity on social media platforms. The application uses machine learning algorithms to predict the popularity of the artists based on their social media data.",
     stack: [
       { name: "Flask" },
@@ -54,13 +103,13 @@ const projects = [
       { name: "nltk" },
     ],
     image: "/assets/work/ArtistPopularityAnalysis.png",
-    live: "",
-    github: "https://github.com/2023-Fall-CS-415-515/project-3-implementation-informatics",
+    // live: "",
+    github: "https://github.com/anshah85/ArtistPopularityAnalysis",
   },
   {
-    num: "03",
+    num: "05",
     category: "Encrypted Bank Server",
-    title: "project 3",
+    title: "project 5",
     description: "Encrypted Bank Server is a backend server that provides secure banking services to the users. The server uses encryption algorithms to secure the user data and transactions.",
     stack: [
       { name: "Java" },
@@ -69,7 +118,7 @@ const projects = [
       { name: "Encryption Algorithms" },
     ],
     image: "/assets/work/EncryptedBankServer.png",
-    live: "",
+    // live: "",
     github: "https://github.com/anshah85/EncryptedBankServer",
   },
 ];
@@ -119,7 +168,7 @@ const Work = () => {
               {/* Buttons */}
               <div className="flex gap-4">
                 {/* Live project button */}
-                <Link href={project.live}>
+                {/* <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full 
@@ -131,9 +180,9 @@ const Work = () => {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                </Link>
+                </Link> */}
                 {/* Github button */}
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank" rel="noopener noreferrer">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full 
@@ -141,7 +190,7 @@ const Work = () => {
                         <BsGithub className="text-white text-3xl group-hover:text-accent" />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Github repository</p>
+                        <p>Github repository/Live project</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -176,7 +225,7 @@ const Work = () => {
               ))}
               <WorkSliderBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] rounded-full flex justify-center items-center transition-all"
               />
             </Swiper>
           </div>
