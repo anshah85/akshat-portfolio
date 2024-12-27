@@ -52,13 +52,13 @@ const Services = () => {
   }
 
   return (
-    <section className="h-screen flex items-center">
+    <section className="h-[100dvh] flex items-start md:items-center py-12 md:py-0">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+          className="grid grid-cols-1 md:grid-cols-2 gap-[60px] overflow-y-auto md:overflow-visible max-h-[calc(100vh-96px)] md:max-h-none px-4 md:px-0"
         >
           {services.map((service, index) => (
             <motion.div 

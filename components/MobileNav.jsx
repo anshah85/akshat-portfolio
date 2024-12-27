@@ -4,52 +4,80 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from 'react-icons/ci';
+import { motion } from "framer-motion";
 
 const links = [
-    {
-        name: 'home',
-        path: '/',
-    },
-    {
-        name: 'services',
-        path: '/services',
-    },
-    {
-        name: 'resume',
-        path: '/resume',
-    },
-    {
-        name: 'work',
-        path: '/work',
-    },
-    {
-        name: 'contact',
-        path: '/contact',
-    },
-]
-
+    { name: 'home', path: '/' },
+    { name: 'services', path: '/services' },
+    { name: 'resume', path: '/resume' },
+    { name: 'work', path: '/work' },
+    { name: 'contact', path: '/contact' },
+];
 
 const MobileNav = () => {
     const pathname = usePathname();
-    return <Sheet>
-        <SheetTrigger className="flex justify-center items-center">
-            <CiMenuFries className="text-[32px] text-accent" />
-        </SheetTrigger>
-        <SheetContent className="flex flex-col">
-            {/* logo */}
-            <div className="mt-32 mb-40 text-center text-2xl">
-                <Link href="/">
-                    <h1 className="text-4xl font-semibold">Akshat<span className="text-accent"> .</span></h1>
-                </Link>
-            </div>
-            {/* nav */}
-            <nav className="flex flex-col justify-center items-center gap-8">
-                {links.map((link, index) => {
-                    return <Link href={link.path} key={index} className={`${link.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all`}>{link.name}</Link>
-                })}
-            </nav>
-        </SheetContent>
-    </Sheet>;
+
+    return (
+        <Sheet>
+            <SheetTrigger asChild>
+                <button 
+                    className="flex justify-center items-center p-2 hover:bg-accent/10 rounded-full transition-colors"
+                    aria-label="Open Menu"
+                >
+                    <CiMenuFries className="text-[32px] text-accent" />
+                </button>
+            </SheetTrigger>
+            <SheetContent className="flex flex-col bg-primary border-l border-accent/20">
+                {/* logo */}
+                <motion.div 
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="mt-32 mb-40 text-center"
+                >
+                    <Link href="/" className="inline-block">
+                        <h1 className="text-4xl font-semibold hover:text-accent transition-colors">
+                            Akshat<span className="text-accent"> .</span>
+                        </h1>
+                    </Link>
+                </motion.div>
+
+                {/* nav */}
+                <nav className="flex flex-col justify-center items-center gap-8" aria-label="Mobile Navigation">
+                    {links.map((link, index) => {
+                        const isActive = link.path === pathname;
+                        
+                        return (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.2, delay: index * 0.1 }}
+                            >
+                                <Link 
+                                    href={link.path}
+                                    className={`relative text-xl capitalize transition-all
+                                        hover:text-accent focus-visible:outline-none focus-visible:ring-2 
+                                        focus-visible:ring-accent rounded-md px-2 py-1
+                                        ${isActive ? 'text-accent' : 'text-white/80'}
+                                    `}
+                                    aria-current={isActive ? 'page' : undefined}
+                                >
+                                    {link.name}
+                                    {isActive && (
+                                        <motion.span 
+                                            layoutId="underline"
+                                            className="absolute left-0 -bottom-1 w-full h-[2px] bg-accent"
+                                        />
+                                    )}
+                                </Link>
+                            </motion.div>
+                        );
+                    })}
+                </nav>
+            </SheetContent>
+        </Sheet>
+    );
 }
 
 export default MobileNav;
