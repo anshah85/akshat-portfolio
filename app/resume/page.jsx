@@ -6,7 +6,15 @@ import {
   FaReact, 
   FaJs, 
   FaFigma, 
-  FaNodeJs
+  FaNodeJs,
+  FaJava,
+  FaPython,
+  FaAws,
+  FaDatabase,
+  FaFlask,
+  FaGit,
+  FaGithub,
+  FaJenkins
  } from "react-icons/fa";
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
@@ -107,15 +115,15 @@ const education = {
 
 const skills = {
   title: "My skills",
-  description: "Technologies and tools I am proficient in",
+  description: "I have experience working with the following technologies and tools",
   skillList: [
     {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
+      icon: <FaJava />,
+      name: "java",
+    }, 
     {
-      icon: <FaCss3 />,
-      name: "css 3",
+      icon: <FaPython />,
+      name: "python",
     },
     {
       icon: <FaJs />,
@@ -130,6 +138,22 @@ const skills = {
       name: "next.js",
     },
     {
+      icon: <FaDatabase />,
+      name: "sql",
+    },
+    {
+      icon: <FaFlask />,
+      name: "flask",
+    }, 
+    {
+      icon: <FaGithub />,
+      name: "github",
+    },
+    {
+      icon: <FaJenkins />,
+      name: "jenkins",
+    },
+    {
       icon: <SiTailwindcss />,
       name: "tailwind.css",
     },
@@ -138,8 +162,8 @@ const skills = {
       name: "node.js",
     },
     {
-      icon: <FaFigma />,
-      name: "figma",
+      icon: <FaAws />,
+      name: "aws",
     },
   ]
 };
