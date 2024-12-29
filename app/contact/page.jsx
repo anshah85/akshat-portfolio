@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaCalendar } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -82,7 +82,20 @@ ${formData.message}
     {
       icon: <FaMapMarkerAlt />,
       title: "Address",
-      description: "New York City, NY",
+      description: "Binghamton, NY",
+    },
+    {
+      icon: <FaCalendar />,
+      title: "Schedule a Meeting",
+      description: (
+        <Button 
+          variant="link" 
+          className="text-xl text-accent p-0 h-auto hover:text-accent/80"
+          onClick={() => window.open('https://calendly.com/akshat_shah/30min', '_blank')}
+        >
+          Book a time slot
+        </Button>
+      ),
     },
   ];
 

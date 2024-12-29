@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { BsArrowUpRight, BsGithub, BsFillEyeFill } from "react-icons/bs";
 
 import {
   Tooltip,
@@ -198,7 +198,7 @@ const Work = () => {
                           className="w-[70px] h-[70px] rounded-full 
                       bg-white/5 flex justify-center items-center"
                         >
-                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                          <BsFillEyeFill className="text-white text-3xl group-hover:text-accent" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Github repository/Live project</p>
@@ -215,7 +215,7 @@ const Work = () => {
                 spaceBetween={30}
                 slidesPerView={1}
                 loop={true}
-                className="h-[460px] xl:h-[520px] mb-12"
+                className="h-[360px] xl:h-[520px] mb-12"
                 onSlideChange={handleSlideChange}
               >
                 {projects.map((project, index) => (
