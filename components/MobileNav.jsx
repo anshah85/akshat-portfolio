@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from 'react-icons/ci';
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const links = [
     { name: 'home', path: '/' },
@@ -16,9 +17,10 @@ const links = [
 
 const MobileNav = () => {
     const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
                 <button 
                     className="flex justify-center items-center p-2 hover:bg-accent/10 rounded-full transition-colors"
@@ -56,6 +58,7 @@ const MobileNav = () => {
                             >
                                 <Link 
                                     href={link.path}
+                                    onClick={() => setIsOpen(false)}
                                     className={`relative text-xl capitalize transition-all
                                         hover:text-accent focus-visible:outline-none focus-visible:ring-2 
                                         focus-visible:ring-accent rounded-md px-2 py-1
